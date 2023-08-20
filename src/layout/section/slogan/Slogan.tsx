@@ -3,15 +3,18 @@ import styled from "styled-components";
 import {SectionTitle} from "../../../components/SectionTitle";
 import {Button} from "../../../components/Button";
 import {FlexWrapper} from "../../../components/FlexWrapper";
+import {Container} from "../../../components/Container";
 
 export const Slogan = () => {
     return (
         <StyledSlogan>
-            <SectionTitle>I Am Available For Freelance</SectionTitle>
-            <FlexWrapper justify={'center'}>
-                <Button>Hire me</Button>
-            </FlexWrapper>
+            <Container>
+                <FlexWrapper direction={'column'} align={'center'}>
+                    <SectionTitle>I Am Available For Freelance</SectionTitle>
 
+                    <Button>Hire me</Button>
+                </FlexWrapper>
+            </Container>
         </StyledSlogan>
     );
 };
@@ -19,6 +22,6 @@ export const Slogan = () => {
 const StyledSlogan = styled.section`
   min-height: 30vh;
   background-color: #d4f5cd;
-  
+
 `
 
