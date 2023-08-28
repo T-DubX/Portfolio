@@ -1,7 +1,7 @@
 {
   "name": "portfolio-start",
   "version": "0.1.0",
-  "homepage": "http://T-DubX/portfolio",
+  "homepage": "http://t-dubx.github.io/portfolio/",
   "private": true,
   "dependencies": {
     "@babel/core": "7.16.0",
