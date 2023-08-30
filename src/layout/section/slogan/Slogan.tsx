@@ -5,13 +5,12 @@ import {Button} from "../../../components/Button";
 import {FlexWrapper} from "../../../components/FlexWrapper";
 import {Container} from "../../../components/Container";
 
-export const Slogan = () => {
+export const Slogan: React.FC = () => {
     return (
         <StyledSlogan>
             <Container>
                 <FlexWrapper direction={'column'} align={'center'}>
                     <SectionTitle>I Am Available For Freelance</SectionTitle>
-
                     <Button>Hire me</Button>
                 </FlexWrapper>
             </Container>
@@ -21,6 +20,5 @@ export const Slogan = () => {
 
 const StyledSlogan = styled.section`
   background-color: #d4f5cd;
-
 `
 
