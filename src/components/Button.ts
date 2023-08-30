@@ -8,7 +8,6 @@ export const Button = styled.button`
   text-transform: uppercase;
   width: 170px;
   height: 32px;
-  text-transform: uppercase;
 
   position: relative;
   
