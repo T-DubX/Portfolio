@@ -56,7 +56,7 @@ const PhotoWrapper = styled.div`
     }
   }
   
-  @media ${theme.media.mobile} {
+  @media ${theme.media.mobile}{
     margin-top: 65px;
   }
 `
