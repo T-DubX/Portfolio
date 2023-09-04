@@ -7,7 +7,7 @@ import socialImg from '../../../assets/images/project-1.webp'
 import timerImg from '../../../assets/images/project-2.webp'
 import {Container} from "../../../components/Container";
 import {S} from './Works_Styles'
-
+import {AnimatePresence, motion} from "framer-motion"
 
 const tabsItems: Array<{ title: string, status: TabsStatusType }> = [
     {
@@ -33,13 +33,29 @@ const worksData = [
         title: 'Social Network',
         src: socialImg,
         text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-        type: 'spa'
+        type: 'spa',
+        id: 1,
     },
     {
         title: 'Timer',
         src: timerImg,
         text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit  ut labore et dolore magna aliqua Ut enim',
-        type: 'react'
+        type: 'react',
+        id: 2,
+    },
+    {
+        title: 'Social Network',
+        src: socialImg,
+        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+        type: 'spa',
+        id: 3,
+    },
+    {
+        title: 'Timer',
+        src: timerImg,
+        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit  ut labore et dolore magna aliqua Ut enim',
+        type: 'react',
+        id: 4,
     },
 
 ]
@@ -71,13 +87,28 @@ export const Works: React.FC = () => {
                 <TabMenu tabsItems={tabsItems} changeFilterStatus={changeFilterStatus}
                          currentFilterStatus={currentFilterStatus}/>
                 <FlexWrapper justify={'space-between'} align={'flex-start'} wrap={'wrap'}>
-                    {
-                        filteredWorks.map((work, index) => (
-                            <Work title={work.title}
-                                  text={work.text}
-                                  src={work.src}/>
-                        ))
-                    }
+
+                    <AnimatePresence>
+                        {
+                            filteredWorks.map((work, index) => (
+                                <motion.div style={{ maxWidth: '540px', width: "400px",
+                                    flexGrow: 1}}
+                                    layout={true}
+                                    initial={{opacity: 0}}
+                                    animate={{opacity: 1}}
+                                    exit={{opacity: 0}}
+                                    key={work.id}
+                                >
+                                    <Work title={work.title}
+                                          text={work.text}
+                                          src={work.src}
+                                          key={work.id}
+                                    />
+                                </motion.div>
+                            ))
+                        }
+                    </AnimatePresence>
+
                 </FlexWrapper>
             </Container>
 
