@@ -33,6 +33,8 @@ const SocialLink = styled.a`
   align-items: center;
 
   color: ${theme.colors.accent};
+  
+  transition: ${theme.animation.transition};
 
   &:hover {
     color: ${theme.colors.primaryBg};
